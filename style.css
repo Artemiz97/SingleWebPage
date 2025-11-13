@@ -1,0 +1,74 @@
+.logo img {
+	/* Target the img inside the .logo wrapper (was incorrectly .header > img) */
+	width: 60px;    /* change this to the desired size */
+	height: auto;   /* preserve aspect ratio */
+	display: block; /* avoid inline-image whitespace/align issues */
+	max-width: 100%; /* keep it responsive on small screens */
+    border-radius: 50%; /* make the image circular */
+}
+
+.hero-image img{
+    width: 300px; /* set a fixed width for the hero image */
+    height: auto; /* maintain aspect ratio */
+    margin-left: 20px; /* space between text and image */
+    border-radius: 12px; /* rounded corners for the hero image */
+}
+
+.header {
+    background-color: #1F2937;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.logo, .hero {
+    margin: 20px 100px; /* space between logo and text */
+    display: flex;
+}
+.nav-links {
+    margin-left: auto; /* push to the right */
+    display: flex;
+    gap: 15px; /* space between links */
+    align-items: center; 
+}  
+
+
+.hero-main-text {
+    font-weight: 900;
+    font-size: 48px;
+    /* color values must NOT be in quotes */
+    color: #F9FAF8;
+}
+.hero-sub-text {
+    font-size: 18px;
+    color: #E5E7EB;
+    margin-top: 10px; /* space between main text and sub text */
+    margin-bottom: 10px; /* space between sub text and button */
+}
+
+/* Target the button inside the .hero container (or the button adjacent to .hero-text).
+   The original selector `.hero-text > button` didn't match because the button is
+   a sibling of `.hero-text`, not a child. */
+.hero button {
+    background-color: #3882F6;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+
+ul {
+  list-style-type: none; /* Remove default bullets */
+}
+
+a {
+  text-decoration: none; /* Remove underline from links */
+  color: #666;
+}
+ 
+
