@@ -1,3 +1,9 @@
+body{
+    font-family: 'Roboto';
+}
+
+/* FIRST CONTAINER OF THE BODY */
+
 .logo img {
 	/* Target the img inside the .logo wrapper (was incorrectly .header > img) */
 	width: 60px;    /* change this to the desired size */
@@ -8,23 +14,28 @@
 }
 
 .hero-image img{
-    width: 300px; /* set a fixed width for the hero image */
+    width: 350px; /* set a fixed width for the hero image */
     height: auto; /* maintain aspect ratio */
     margin-left: 20px; /* space between text and image */
     border-radius: 12px; /* rounded corners for the hero image */
 }
-
+.header, .footer {
+    background-color: #1F2937; /* dark background for header and footer */
+}   
 .header {
-    background-color: #1F2937;
-    font-family: 'Roboto', sans-serif;
     color: white;
     display: flex;
     flex-direction: column;
-    
+    /* Add horizontal padding (left/right equal) and increase bottom padding
+       so the header has consistent spacing around its content. Adjust values
+       below to taste. s*/
+    padding: 5px 100px 100px; /* top | left+right | bottom */
+    gap: 20px; /* vertical space between .logo and .hero */
 }
 
 .logo, .hero {
-    margin: 20px 100px; /* space between logo and text */
+    /* remove element-level margins in favor of the header padding above */
+    margin: 0;
     display: flex;
 }
 .nav-links {
@@ -51,7 +62,7 @@
 /* Target the button inside the .hero container (or the button adjacent to .hero-text).
    The original selector `.hero-text > button` didn't match because the button is
    a sibling of `.hero-text`, not a child. */
-.hero button {
+.hero button{
     background-color: #3882F6;
     color: white;
     border: none;
@@ -72,3 +83,167 @@ a {
 }
  
 
+
+
+
+a:hover, button:hover {
+  color: #000; /* Darken link color on hover */
+}
+
+/* SECOND CONTAINER OF THE BODY */
+
+.con2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+
+
+/* Layout for the boxes + captions (flex-based grid) */
+#box.box-grid {
+        display: flex;
+        flex-wrap: wrap;           /* wrap to next row on small screens */
+        gap: 20px;                /* space between items */
+        align-items: flex-start;  /* align captions beneath boxes */
+}
+
+.box-item {
+        box-sizing: border-box;
+        flex: 1 1 220px; /* grow, shrink, base width 220px */
+        max-width: 200px; /* optional cap per item */
+        display: flex;
+        flex-direction: column; /* stack box then caption */
+        margin-bottom: 50px; /* space below each item */
+}
+
+.box {
+        width: 100%;
+        height: 160px; /* example size for illustration */
+        border-radius: 8px;
+}
+
+.box-caption {
+        margin-top: 8px;
+        color: #9CA3AF;
+        font-size: 14px;
+        line-height: 1.3;
+        overflow-wrap: break-word; /* allow long words to wrap */
+        text-align: center; /* center caption text */
+}
+
+
+
+/* Scope .box visuals used in the second container so they don't override
+   the .box used by the .box-item / box-grid layout above. This keeps the
+   caption width tied to the .box-item's width (box fills 100% of item). */
+.con2 #box .box {
+    width: 100%;
+    height: 200px;
+    border: 5px solid #3882F6;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+#information-header-text {
+    font-weight: 900;
+    font-size: 36px;
+    color: #1F2937;
+    margin: 20px; 
+}   
+
+#box{
+    /* keep the grid/flex behavior defined earlier; if this selector
+       is needed for other pages, it remains. To ensure captions match
+       their box width, the .box is set to width:100% inside .box-item. */
+    display: flex;
+    gap: 20px; /* space between boxes */
+    justify-content: space-around; /* space boxes evenly */
+    margin: 20px 0; /* vertical spacing around the container */
+}
+
+
+
+
+/* THIRD CONTAINER OF THE BODY */
+
+.con3{
+    background-color: #E5E7EB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.quote-text {
+    font-size: 36px;
+    font-weight: 300;
+    color: #1F2937;
+    width: 60%;
+    margin-top: 100px;
+}
+.author {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1F2937;
+    margin-top: 20px;
+    align-self: flex-end;
+    margin-right: 20%;
+    margin-bottom: 100px;
+}
+
+
+/* CONTAINER FOUR OF THE BODY  */
+
+.con4{
+    background-color: white;
+    padding: 100px 150px;
+    
+}   
+
+.con4-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.call-to-action-main-text {
+    color: #F9FAF8;
+    font-weight: 900;
+    font-size: 36px;
+}
+
+.con4 p {
+    color: #E5E7EB;
+    font-size: 18px;
+}
+.call-to-action {
+    background-color: #3882F6;
+    display: flex;
+    justify-content: space-between; /* keep text left, button right */
+    align-items: center; /* vertically center the button with the text */
+    border-radius: 12px;
+    /* reduce vertical padding so top/bottom borders sit closer to the button,
+       increase horizontal padding so the sides are wider */
+    padding: 16px 80px; /* vertical | horizontal */
+    margin: 10px;
+}
+
+.call-to-action button {
+    border: 2px solid #F9FAF8;
+    background: transparent; /* keep the blue container as the visual bg */
+    color: #F9FAF8;
+    padding: 10px 28px; /* more horizontal padding on the button itself */
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+
+/* FOOTER */
+.footer {
+    color: #7d7d7f;
+    text-align: center;
+    padding: 20px;
+    font-size: 8px;
+}
